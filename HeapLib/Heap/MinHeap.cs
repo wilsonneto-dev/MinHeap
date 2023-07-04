@@ -34,15 +34,12 @@ public class MinHeap<T> : IMinHeap<T> where T : IComparable<T>
         while(leftChildIndex < Count)
         {
             var smaller = 
-                    rightChildIndex < Count &&
-                    _bucket[rightChildIndex].CompareTo(_bucket[leftChildIndex]) < 0 ?
-                    
+                rightChildIndex < Count &&
+                _bucket[rightChildIndex].CompareTo(_bucket[leftChildIndex]) < 0 ?
                 rightChildIndex : leftChildIndex;
 
             if(_bucket[i].CompareTo(_bucket[smaller]) < 0)
-            {
                 break;
-            }
 
             (_bucket[i], _bucket[smaller]) = (_bucket[smaller], _bucket[i]);
             i = smaller;
@@ -80,7 +77,7 @@ public class MinHeap<T> : IMinHeap<T> where T : IComparable<T>
     private void ExpandBucket()
     {
         Capacity *= 2;
-        var expandedBucket = new T?[Capacity];
+        var expandedBucket = new T[Capacity];
         for(int i = 0; i < _bucket.Length; i++)
             expandedBucket[i] = _bucket[i];
         _bucket = expandedBucket;
