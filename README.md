@@ -1,5 +1,7 @@
 # HeapLab
 
+https://github.com/dotnet/runtime/blob/main/src/libraries/System.Collections/src/System/Collections/Generic/PriorityQueue.cs#L719
+
 ## Just some notes about the MS implementation
 
 ![image](https://github.com/wilsonneto-dev/MinHeap/assets/20674439/187a2340-d05b-4212-b521-4a1851dbceeb)
